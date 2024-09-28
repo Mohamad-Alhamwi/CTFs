@@ -1,2 +1,3 @@
 # CTFs
-CTF Writeups | A collection of detailed writeups for various CTF challenges I've attended.
+
+This repository contains a collection  of detailed writeups for various CTFs challenges I've participated in.
