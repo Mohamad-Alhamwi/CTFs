@@ -6,7 +6,7 @@ In this challenge, we are provided with a file named `chall`. The first step is 
 
 ![Alt text](../Assets/Images/6.png)
 
-Our next step is to execute the file and observe its behavior. We do this by connecting to the service using nc (netcat) at the provided address: `nc 143.110.187.156 30001`. Upon running the file, we notice that it takes user input and prints something in response. However, the output doesn’t reveal much at first glance, so we proceed to analyze the binary statically to understand its inner workings.
+Our next step is to execute the file and observe its behavior. We do this by connecting to the service using `nc` (netcat) at the provided address: `nc 143.110.187.156 30001`. Upon running the file, we notice that it takes user input and prints something in response. However, the output doesn’t reveal much at first glance, so we proceed to analyze the binary statically to understand its inner workings.
 
 ![Alt text](../Assets/Images/7.png)
 
@@ -52,14 +52,11 @@ From the decompiled code, we can see that the file descriptor `fd` is used to ho
 
 Knowing this, we can start exploring the stack by inputting format strings like `%1$x`, `%2$x`, and so on, to examine values at different positions. After some trial and error, we find that the flag is located at the **7th position** on the stack.
 
-By providing `%7$s` as input, we successfully leak the flag: `H7CTF{f0rm47_s71ng$_4r3_s7!ll_r3l3v4n7}`
+By providing `%7$s` as input, we successfully leak the flag: **H7CTF{f0rm47_s71ng$_4r3_s7!ll_r3l3v4n7}**
 
 ![Alt text](../Assets/Images/8.png)
 ![Alt text](../Assets/Images/9.png)
 ![Alt text](../Assets/Images/10.png)
-
-
-
 
 ## Conclusion
 
