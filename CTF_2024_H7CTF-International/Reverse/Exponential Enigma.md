@@ -13,7 +13,7 @@ Our task is to interact with the binary file, figure out what operations it perf
 
 Running the ELF binary, we observe a sequence of numbers being printed. From this, we infer that the binary is likely performing some kind of mathematical operation. To gain a better understanding of the operations, we proceed to load the binary into a static analysis tool, such as Ghidra, and inspect the decompiled code.
 
-![Alt text](../Assets/Images/10.png)
+![Alt text](../Assets/Images/11.png)
 
 ## Static Analysis
 
@@ -92,20 +92,20 @@ int main(void)
 
 ## Code Analysis
 
-1- Tetra Function:
+**1- Tetra Function:**
 The `tetra` function computes a power-based result by raising `num_1` to the power of a progressively increasing number (`return_value`), adjusting the result if it exceeds a large predefined constant (`9.223e+18`). If the result is too large, it performs a bitwise XOR operation to limit the value.
 
-2- Integer Array Calculation:
+**2- Integer Array Calculation:**
 The main function calls `tetra()` four times with increasing values of `num_2`. It uses these results to populate an array called `int_array`.
 
-3- XOR Obfuscation:
+**3- XOR Obfuscation:**
 The program then iterates over the string "**REDACTED**" and XORs each character with a value from `int_array`. The result is printed as a hexadecimal string, suggesting that this might be a simple XOR-based encryption.
 
 To verify that the reverse-engineered code functions correctly, we first need to compile the cleaned-up version of the code. We can do this by using the `gcc` command: `gcc -o enigma.o enigma.c`
 
-This command compiles the `enigma.c` file (which contains our cleaned-up code) and produces an executable named `enigma.o`. Running this executable confirms that the reverse-engineered program produces the same result as the original binary. This ensures that our understanding of the code is accurate and that the reverse-engineering process was successful.
+This command compiles the `enigma_temp.c` file (which contains our cleaned-up code) and produces an executable named `enigma_temp.o`. Running this executable confirms that the reverse-engineered program produces the same result as the original binary. This ensures that our understanding of the code is accurate and that the reverse-engineering process was successful.
 
-![Alt text](../Assets/Images/11.png)
+![Alt text](../Assets/Images/12.png)
 
 ## The Goal
 
@@ -166,7 +166,7 @@ int main(void)
 
 After running the modified code, the program successfully outputs the flag by reversing the XOR operation using the given hexadecimal array.
 
-![Alt text](../Assets/Images/12.png)
+![Alt text](../Assets/Images/13.png)
 
 ## Conclusion
 
