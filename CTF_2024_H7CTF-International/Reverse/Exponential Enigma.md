@@ -4,8 +4,8 @@
 
 In this challenge, we are provided with two files:
 
-1- An ELF binary file.
-2- A text file containing a long hexadecimal number.
+1. An ELF binary file.
+2. A text file containing a long hexadecimal number.
 
 Our task is to interact with the binary file, figure out what operations it performs, and then use the provided hexadecimal data to calculate or retrieve a flag.
 
