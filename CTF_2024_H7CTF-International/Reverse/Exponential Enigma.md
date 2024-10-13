@@ -101,7 +101,7 @@ The main function calls `tetra()` four times with increasing values of `num_2`. 
 **3- XOR Obfuscation:**
 The program then iterates over the string "**REDACTED**" and XORs each character with a value from `int_array`. The result is printed as a hexadecimal string, suggesting that this might be a simple XOR-based encryption.
 
-To verify that the reverse-engineered code functions correctly, we first need to compile the cleaned-up version of the code. We can do this by using the `gcc` command: `gcc -o enigma.o enigma.c`
+To verify that the reverse-engineered code functions correctly, we first need to compile the cleaned-up version of the code. We can do this by using the `gcc` command: `gcc -o enigma_temp.o enigma_temp.c`
 
 This command compiles the `enigma_temp.c` file (which contains our cleaned-up code) and produces an executable named `enigma_temp.o`. Running this executable confirms that the reverse-engineered program produces the same result as the original binary. This ensures that our understanding of the code is accurate and that the reverse-engineering process was successful.
 
